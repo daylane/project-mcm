@@ -1,66 +1,52 @@
-import { styled } from "@mui/material";
+import { styled } from "@mui/material/styles";
 
-export const ContentForm = styled.div`
-  padding: 1rem;
-  width: 30%;
+export const ContentForm = styled("div")(({ theme }) => ({
+  padding: "1rem",
+  width: "30%",
 
-  .text-secondary {
-    color: '#8c8c8c';
-  }
+  ".text-secondary": {
+    color: "#8c8c8c",
+  },
 
-  img {
-    min-width: 8%;
-    width: 100%;
-  }
+  img: {
+    minWidth: "8%",
+    width: "100%",
+  },
 
-  form {
-    width: 100%;
-    margin: 1rem 2rem 1rem;
-  }
+  form: {
+    width: "100%",
+    margin: "1rem 2rem",
+  },
 
-  .logo {
-  }
+  ".header": {
+    margin: "1rem 2rem",
 
-  .header {
-    margin: 1rem 2rem 1rem;
+    h1: {
+      fontWeight: "bold",
+    },
+  },
 
-    h1 {
-      font-weight: bold;
-    }
+  button: {
+    marginTop: "1rem",
+  },
 
-    p {
-    }
-  }
+  [theme.breakpoints.down("md")]: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    width: "100%",
 
-  /* form {
-    input {
-    width: 50%;
-  }
-  } */
+    ".header": {
+      textAlign: "center",
+    },
 
-  button {
-    margin-top: 1rem;
-    /* width: 80%; */
-  }
+    "form input": {
+      width: "100%",
+    },
 
-  @media (max-width: 800px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 100%;
-
-    .header {
-      text-align: center;
-    }
-
-    form input {
-      width: 100%;
-    }
-
-    button {
-      margin-top: 1rem;
-      width: 100%;
-    }
-  }
-`;
+    button: {
+      marginTop: "1rem",
+      width: "100%",
+    },
+  },
+}));
