@@ -1,53 +1,68 @@
-import {  Card, CardContent, Container } from "@mui/material";
-import { ContentForm } from "./style";
+import {
+  Box,
+  Button,
+  TextField,
+  Card,
+  CardContent,
+  Typography,
+} from "@mui/material";
 import logo from "../../assets/logo.svg";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import Button from "../../components/Button/Button";
-import InputField from "../../components/InputField/InputField";
 import { useNavigate } from "react-router";
 
 export default function Login() {
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
 
   return (
-    <Formik
-			>
-				<Form>
-					<Card className="w-full py-6 px-2 shadow-lg border">
-						<CardContent>
-							<h2 className="text-2xl font-medium mb-4">Login</h2>
-							<div className="mb-4">
-								<Field
-									name="login"
-									render={({ field }) => (
-										<InputField type='email' label={'E-mail'} placeholder={'marketing@amvox.com.br'} />
-									)}
-								/>
-								<ErrorMessage name="login" component="div" className="text-red-500 text-xs" />
-
-							</div>
-							<div className="mb-4">
-								<Field
-									name="password"
-									render={({ field }) => (
-										<InputField type='password' label={'Senha'} name="password" placeholder={'Insira sua senha'}
-										/>
-									)}
-								/>
-								<ErrorMessage name="password" component="div" className="text-red-500 text-xs" />
-
-							</div>
-							{/* <div className="text-sm text-black font-medium mb-4">
-								<a onClick={goNextPass} className="hover:underline">Esqueceu a senha?</a>
-							</div> */}
-							<Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white" >
-							
-							</Button>
-						</CardContent>
-					</Card>
-				</Form>
-			</Formik>
-
+    <Formik>
+      <Form>
+        <Card
+          sx={{
+            minWidth: 500,
+            minHeight: 400,
+            display: "flex",
+            margin: "auto",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <CardContent>
+            <Typography variant="h5">Login</Typography>
+            <Box>
+              <TextField
+                id="email"
+                label="Email"
+                variant="outlined"
+                type="email"
+                fullWidth
+                margin="normal"
+              />
+              <ErrorMessage name="email">
+                {(msg) => <div style={{ color: "red" }}>{msg}</div>}
+              </ErrorMessage>
+              <TextField
+                id="password"
+                label="Senha"
+                variant="outlined"
+                type="password"
+                fullWidth
+                margin="normal"
+              />
+              <ErrorMessage name="password">
+                {(msg) => <div style={{ color: "red" }}>{msg}</div>}
+              </ErrorMessage>
+              <Button
+                variant="contained"
+                color="primary"
+                fullWidth
+                onClick={() => navigate("/home")}
+              >
+                Entrar
+              </Button>
+            </Box>
+          </CardContent>
+        </Card>
+      </Form>
+    </Formik>
   );
 }
