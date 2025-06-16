@@ -1,10 +1,13 @@
 import './App.css'
+import { UsuarioProvider } from './hooks/UsuarioHook';
 import Rotas from './routes/routes';
 
 function App() {
   
   return (
-   <Rotas/>
+   <UsuarioProvider>
+     <Rotas/>
+   </UsuarioProvider>
   );
 }
 

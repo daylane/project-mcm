@@ -9,9 +9,24 @@ import {
 import logo from "../../assets/logo.svg";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useNavigate } from "react-router";
+import { useState } from "react";
+import useLogin from "../../hooks/useLogin";
 
 export default function Login() {
   const navigate = useNavigate();
+  const [requestUsuario, setRequestUsuario] = useState({
+        email: '',
+        password: ''
+      });
+  const {login, loading, error} = useLogin();
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+
+    await login(requestUsuario);
+    navigate('/home')
+  };
+
 
   return (
     <Formik>
@@ -33,9 +48,11 @@ export default function Login() {
                 id="email"
                 label="Email"
                 variant="outlined"
+                value={requestUsuario.email}
                 type="email"
                 fullWidth
                 margin="normal"
+                onChange={(e) => setRequestUsuario({...requestUsuario, email: e.target.value })}
               />
               <ErrorMessage name="email">
                 {(msg) => <div style={{ color: "red" }}>{msg}</div>}
@@ -44,9 +61,11 @@ export default function Login() {
                 id="password"
                 label="Senha"
                 variant="outlined"
+                value={requestUsuario.password}
                 type="password"
                 fullWidth
                 margin="normal"
+                onChange={(e) => setRequestUsuario({...requestUsuario, password: e.target.value })}
               />
               <ErrorMessage name="password">
                 {(msg) => <div style={{ color: "red" }}>{msg}</div>}
@@ -55,7 +74,8 @@ export default function Login() {
                 variant="contained"
                 color="primary"
                 fullWidth
-                onClick={() => navigate("/home")}
+                disabled={loading}
+                onClick={handleSubmit} 
               >
                 Entrar
               </Button>
