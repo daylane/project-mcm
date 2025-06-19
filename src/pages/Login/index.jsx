@@ -6,7 +6,7 @@ import {
   CardContent,
   Typography,
 } from "@mui/material";
-import logo from "../../assets/logo.svg";
+//import logo from "../../assets/logo.svg";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useNavigate } from "react-router";
 import { useState } from "react";
@@ -18,13 +18,17 @@ export default function Login() {
         email: '',
         password: ''
       });
-  const {login, loading, error} = useLogin();
+  const {login, loading, erro} = useLogin();
 
   const handleSubmit = async(e) => {
     e.preventDefault();
 
     await login(requestUsuario);
-    navigate('/home')
+
+  
+    if(erro === null){
+      navigate('/home')
+    }
   };
 
 

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useUsuario } from "./UsuarioHook";
+import { useUsuario } from "./usuarioHook";
 import { loginUsuario } from "../api/UsuarioService";
 
 
@@ -17,13 +17,12 @@ const useLogin = () => {
         setErro(null);
 
         try{
-            const usuario = loginUsuario(body);
-             definirUsuario(usuario);
+            const usuario = await loginUsuario(body);
+            definirUsuario(usuario);
         }
-        catch(error){
+        catch (error) {
             setErro(error);
-        }
-        finally{
+        } finally {
             setLoading(false);
         }
     };

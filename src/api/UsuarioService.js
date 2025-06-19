@@ -5,9 +5,9 @@ import axiosInstancia from "./axios"
 export const loginUsuario = async (dados) => {
     try{
         const response = await axiosInstancia.post('ContaUsuario/Login', dados);
-        return response.data;
+        return Promise.resolve(response.data);
     }
     catch(error){
-        console.error(error);
+        return Promise.reject(error.response.data);
     }
 }
