@@ -23,10 +23,9 @@ export default function Login() {
   const handleSubmit = async(e) => {
     e.preventDefault();
 
-    await login(requestUsuario);
-
-  
-    if(erro === null){
+   const result = await login(requestUsuario);
+   
+    if(result.sucess === true){
       navigate('/home')
     }
   };

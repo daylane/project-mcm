@@ -3,7 +3,7 @@ import { useUsuario } from "./usuarioHook";
 import { loginUsuario } from "../api/UsuarioService";
 
 
-const useLogin = () => {
+function useLogin() {
     //Defini o estado inicial das constantes
     const [loading, setLoading] = useState(false);
     const [erro, setErro] = useState(null);
@@ -19,14 +19,15 @@ const useLogin = () => {
         try{
             const usuario = await loginUsuario(body);
             definirUsuario(usuario);
+            return{ sucess: true};
         }
         catch (error) {
             setErro(error);
+            return{sucess: false};
         } finally {
             setLoading(false);
         }
     };
-
     return { login, loading, erro};
 };
 
