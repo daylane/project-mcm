@@ -1,0 +1,10 @@
+.sidebar {
+  width: 200px; /* Largura da barra lateral*/
+  position: fixed; /* Fixa a posição da barra*/
+  top: 0; /* Fixa a posição da barra*/
+  left: 0; /* Fixa a posição da barra*/
+  height: 100vh; /* Define que o sideBar tem a altura total da tela*/
+  overflow-y: auto; /* Aplica scroll automaticamente*/
+  background-color: #818181; /* Cor da Barra lateral*/
+  padding-top: 2rem; /* Aplica espaço entre o conteúdo e a barra*/
+} 

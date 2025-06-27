@@ -1,0 +1,17 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.layout-body {
+  display: flex;
+  flex: 1;
+  margin-top: 60px; /* altura do header */
+  overflow: hidden;
+}
+
+.layout-body .content{
+  flex: 1;
+  padding: 16px;
+}

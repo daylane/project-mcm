@@ -1,0 +1,41 @@
+.sidebar {
+  background: #f3f3f3;
+  height: calc(100% - 50px); /* Altura da tela menos o header */
+  padding: 20px;
+  box-sizing: border-box;
+  border-right: 1px solid #ddd;
+  width: 180px;
+
+  position: fixed;
+  top: 50px; /* Começa abaixo do header */
+  left: 0;
+  z-index: 5; /* abaixo do header */
+}
+.sidebar.open {
+  left: 0;
+}
+.nav-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+.nav-link.active,
+.nav-link:hover {
+  background-color: #555;
+}
+
+.toggleSideBar {
+  position: fixed !important;
+  top: 1rem !important;        /* a 16px do topo da viewport */
+  left: 1rem !important;       /* a 16px da esquerda da viewport */
+  z-index: 2000 !important;    /* acima de qualquer elemento da sidebar */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+

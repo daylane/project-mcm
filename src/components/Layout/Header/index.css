@@ -1,0 +1,23 @@
+.header {
+  width: 100%;/*ocupa toda extensão da tela*/
+  height: 50px; /*tamanho da header na horizontal*/
+  background: #fff; /*cor da header*/
+  display: flex; /**/
+  align-items: center; /*mantém itens da header centralizados*/
+  padding: 0 10px; /*Espaçamento entre o fim e o item*/
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /*Sombra da header*/
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 40px;
+}

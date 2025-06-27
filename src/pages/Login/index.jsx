@@ -18,7 +18,7 @@ export default function Login() {
         email: '',
         password: ''
       });
-  const {login, loading, erro} = useLogin();
+  const {login, loading} = useLogin();
   
 
   const handleSubmit = async(e) => {
