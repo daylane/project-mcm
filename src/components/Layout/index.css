@@ -1,17 +1,18 @@
 .layout {
-  display: flex;
-  flex-direction: column;
   height: 100vh;
 }
 
 .layout-body {
   display: flex;
-  flex: 1;
-  margin-top: 60px; /* altura do header */
-  overflow: hidden;
+  height: 100%;
+  padding-top: 60px; /* Espaço para o header fixo */
 }
 
 .layout-body .content{
-  flex: 1;
+  margin-left: 240px;
+  margin-top: 60px;
   padding: 16px;
+  flex: 1;
+  overflow-y: auto;
+  height: calc(100vh - 60px);
 }

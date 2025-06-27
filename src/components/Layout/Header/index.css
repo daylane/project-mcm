@@ -1,23 +1,49 @@
 .header {
-  width: 100%;/*ocupa toda extensão da tela*/
-  height: 50px; /*tamanho da header na horizontal*/
-  background: #fff; /*cor da header*/
-  display: flex; /**/
-  align-items: center; /*mantém itens da header centralizados*/
-  padding: 0 10px; /*Espaçamento entre o fim e o item*/
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /*Sombra da header*/
-  position: fixed; 
-  top: 0;
-  left: 0;
-  z-index: 10;
+  position: fixed; /* Mantem a barra fixa no topo */
+  top: 0;  /* configuração para manter no topo */
+  left: 0; /* configuração para manter no topo */
+  right: 0; /* configuração para manter no topo */
+  height: 50px; /* Largura do  header*/ 
+  background: #ffffff; /* Cor do header */
+  border-bottom: 1px solid #ddd; /* sombreamento da div */
+  display: flex; 
+  align-items: center;
+  justify-content: start;
+  padding: 0 5px; /* O espaço entre os itens e o inicio*/
+  z-index: 1000;
 }
 
 .header-content {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: center; /* onde os itens devem estar */
+  gap: 2px; /* o espaçamento entre os itens */
 }
 
-.logo {
-  height: 40px;
+/* configuração da typograph */
+.header-text {
+  margin: 0;
+  font-size: 1.1rem !important;
+  color: #000;
+  font-weight: bolder !important;
 }
+
+/* configuração do tamanho da logo */
+.logo {
+  height: 35px;
+}
+
+.toggleButton {
+  background: none; /* configuração do fundo do botão */
+  border: none !important; /*configuração da borda do botão */
+  color: inherit !important; /* configuração da cor do botão */
+  cursor: default;
+  margin-right: 16px;    /* acima de qualquer elemento da sidebar */
+  padding: 20px;
+} 
+
+.toggleButton .content:hover {
+  background-color: rgba(0, 42, 84, 0.2); /* leve fundo translúcido no hover */
+  border-radius: 10%;
+  cursor: pointer;
+}
+

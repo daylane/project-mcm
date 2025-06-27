@@ -1,18 +1,22 @@
-import { Button, Menu } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import logo from "../../../assets/logo.svg"
 import './index.css';
+import { Menu } from "@mui/icons-material";
 
 
-export default function Header () {
-
+const Header = ({ toggleSideBar }) => {
     return(
         <header className="header">
             <div className="header-content">
+                <button className="toggleButton" onClick={toggleSideBar}>
+                    <Menu className="content"/>
+                </button>
                 <img src={logo} alt="logo" className="logo"/>
-                        <Button className="toggleSideBar">
-                        <Menu color="#000000"/>
-                    </Button>
+                <Typography className="header-text">
+                    Meu Sistema
+                </Typography>
             </div>
         </header>
     );
 }
+export default Header;
