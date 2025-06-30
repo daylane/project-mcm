@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./Header";
 import Sidebar from "./SideBar"
+import { Outlet } from "react-router";
 
 
 const Layout = () => {
@@ -16,6 +17,9 @@ const Layout = () => {
            <div className="layout-body">
              <Sidebar abrirSideBar={abrirSideBar}/>
            </div>
+           <div className="main-content">
+          <Outlet />
+        </div>
         </div>
     );
 };

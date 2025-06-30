@@ -7,7 +7,7 @@ const items = [
     { name: 'Página Inicial', path: '/home', icon: <Home/>},
     { name: 'Cadastros', icon: <Settings/>,
          children: [
-     {name: 'Empresa', icon: <Business/>}
+     {name: 'Empresa', icon: <Business/>, path: 'cadastros/empresa'}
     ]}
 ];
  const Sidebar = ({ abrirSideBar }) => {
