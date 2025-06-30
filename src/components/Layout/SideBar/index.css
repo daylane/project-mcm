@@ -22,13 +22,16 @@
   padding: 8px 12px;  /*8px vertical, 12 horizontal interno */
   color: #000000;
   text-decoration: none;
-  border-radius: 4px;  /*arredonda os cantos */
   margin-bottom: 8px; /*espaçamento pra baixo */
   transition: background-color 0.2s ease, justify-content 0.3s ease;  /*aniamação quando fundo muda e o alinhamento muda */
   justify-content: center; /* padrão (fechado) */
 }
 
 .sidebar.open .nav-link {
+  justify-content: flex-start; /* ícone à esquerda */
+}
+
+.sidebar.open .nav-sublink {
   justify-content: flex-start; /* ícone à esquerda */
 }
 
@@ -46,6 +49,28 @@
 .tooltip-container {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  flex-direction: column;
 } 
+
+.submenu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4px;
+}
+
+.nav-sublink {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 10px;
+  margin-bottom: 4px;
+  text-decoration: none;
+}
+.nav-sublink:hover {
+  background-color: #e0e0e0;
+  border-radius: 50px;  /*arrendonda os cantos */
+}

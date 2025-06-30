@@ -1,13 +1,13 @@
 import { NavLink } from "react-router";
 import './index.css'
-import { BuildOutlined, Home, Settings } from "@mui/icons-material";
+import {  Business, Home, Settings } from "@mui/icons-material";
 import { useState } from "react";
 
 const items = [
     { name: 'Página Inicial', path: '/home', icon: <Home/>},
     { name: 'Cadastros', icon: <Settings/>,
          children: [
-     {name: 'Empresa', icon: <BuildOutlined/>}
+     {name: 'Empresa', icon: <Business/>}
     ]}
 ];
  const Sidebar = ({ abrirSideBar }) => {
@@ -33,18 +33,19 @@ const items = [
                     {abrirSideBar && <span className="tooltip-text">{name}</span>}
                     </NavLink>
                    ) : (
-                    <div className="nav-link active" onClick={() => toggleSubmenu(name)}>
+                    <div className="nav-link" onClick={() => toggleSubmenu(name)}>
                     {icon}
                     {abrirSideBar && <span className="tooltip-text">{name}</span>}
                     </div>
                    )}
 
                      {/* Submenu */}
-                    {children && openSubmenu === name && abrirSideBar && (
+                    {children && openSubmenu === name && (
                         <div className="submenu">
                         {children.map((child) => (
-                            <NavLink key={child.path} to={child.path} className="nav-sublink">
-                            <span>{child.name}</span>
+                            <NavLink key={child.name} to={child.path} className="nav-sublink">
+                            {child.icon}
+                            {abrirSideBar && <span className="tooltip-text">{child.name}</span>}
                             </NavLink>
                         ))}
                         </div>
