@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 import Layout from "../components/Layout";
-import Empresa from "../pages/Cadastros/Empresas/indes";
+import Empresa from "../pages/Cadastros/Empresas";
 
 export default function Rotas() {
   return (

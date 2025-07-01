@@ -4,8 +4,7 @@
 
 .layout-body {
   display: flex;
-  height: 100%;
-  padding-top: 60px; /* Espaço para o header fixo */
+  padding-top: 5px; /* Espaço para o header fixo */
 }
 
 .layout-body .content{
@@ -19,6 +18,7 @@
 
 .main-content {
   flex: 1;
-  padding: 16px;
+  padding: 10px;
+  margin-left: 30px;
   overflow-y: auto;
 }
